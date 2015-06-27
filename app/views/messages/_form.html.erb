@@ -1,0 +1,36 @@
+<%= form_for @message do |f| %>
+
+<% if @message.errors.any? %>
+<div id="error_explanations">
+  <h2>
+    <%= pluralize(@message.errors.count, "error")%>
+    prohibited this message from being saved:
+  </h2>
+  <ul>
+    <% @message.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+    <% end %>
+  </ul>
+</div>
+<%end%>
+
+  <p>
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </p>
+
+
+  <p>
+    <%= f.label :plate_no %><br>
+    <%= f.text_field :plate_no %>
+  </p>
+ 
+  <p>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state: MyString
+  plate_no: MyString
+  mssg: MyText
+
+two:
+  state: MyString
+  plate_no: MyString
+  mssg: MyText

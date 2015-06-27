@@ -1,0 +1,23 @@
+<h1>Plates - All</h1>
+
+
+<%= link_to "Leave some hate", new_message_path %>
+<table>
+	<tr>
+		<th>State</th>
+		<th>Plate</th>
+		<th>Message</th>
+	</tr>
+		<% @messages.each do |message| %>
+	<tr>
+		<td><%= message.state %></td>
+		<td><%= message.plate_no %></td>
+		<td><%= message.message %></td>
+		<td><%= link_to 'See More', message_path(message) %></td>
+		<td><%= link_to 'Edit', edit_message_path(message) %></td>
+		<td><%= link_to 'Delete', message_path(message),
+				method: :delete,
+				data: { confirm: 'You Sure?' } %></td>
+	</tr>
+		<% end %>
+</table>
