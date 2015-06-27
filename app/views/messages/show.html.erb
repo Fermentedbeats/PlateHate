@@ -9,24 +9,13 @@
 </p>
 <h2>Comments: </h2>
 
-<%= render @message.comments %>
+<%= render 'comments/comment' %>
+
 
 
 <h2>Add a Comment</h2>
-<%= form_for([@message, @message.comments.build]) do |f| %>
-<p>
-	<%= f.label :commenter %><br>
-	<%= f.text_field :commenter %><br>
-</p>
-<p>
-	<%= f.label :body %><br>
-	<%= f.text_field :body %><br>
-</p>
-<p>
-<%= f.submit %>
-</p>
-<% end %>
+<%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_message_path %> |
 
-<%= link_to "Back", messages_path %>
+<%= link_to "Home", messages_path %>

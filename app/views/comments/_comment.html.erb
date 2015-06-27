@@ -1,6 +1,11 @@
 <% @message.comments.each do |comment| %>
 <p>
-	<strong><%= comment.commenter %></strong> <em>says:<em><br>
+	<strong><%= comment.commenter %></strong> <em>says:</em>
 	<%= comment.body %>
+
+		<%= link_to "Delete Comment", [comment.message, comment],
+		method: :delete,
+		data: {confirm: "You sure?"} %>
+
 </p>
 <% end %>
