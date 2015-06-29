@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+
+http_basic_authenticate_with name:"cj", password:"password",
+except: [:index, :show]
+
 	def index
 		@messages = Message.all
 	end

@@ -5103,3 +5103,101 @@ Processing by MessagesController#show as HTML
   Rendered comments/_form.html.erb (1.9ms)
   Rendered messages/show.html.erb within layouts/application (5.5ms)
 Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/messages/7" for ::1 at 2015-06-26 20:22:49 -0700
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMessage Load (0.1ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."message_id" = ?[0m  [["message_id", 7]]
+  Rendered comments/_comment.html.erb (11.2ms)
+  Rendered comments/_form.html.erb (2.2ms)
+  Rendered messages/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 135ms (Views: 56.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/plates.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/plates.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-06-26 20:22:50 -0700
+
+
+Started POST "/messages/7/comments" for ::1 at 2015-06-26 20:22:54 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aYLlFD9pBmQ3ARqzKgfYQK2/4332NSqZmFA1tpeFXFDKKlMyJ2lKQgrSW4Wnx1c1JfikrdGWI6A5HsPc/oL5rQ==", "comment"=>{"commenter"=>"fff", "body"=>"ffff"}, "commit"=>"Create Comment", "message_id"=>"7"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("commenter", "body", "message_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["commenter", "fff"], ["body", "ffff"], ["message_id", 7], ["created_at", "2015-06-27 03:22:54.210949"], ["updated_at", "2015-06-27 03:22:54.210949"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/messages/7
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/messages/7" for ::1 at 2015-06-26 20:22:54 -0700
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMessage Load (0.1ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."message_id" = ?[0m  [["message_id", 7]]
+  Rendered comments/_comment.html.erb (1.9ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered messages/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/messages" for ::1 at 2015-06-26 20:23:00 -0700
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/messages/new" for ::1 at 2015-06-26 20:23:02 -0700
+Processing by MessagesController#new as HTML
+Filter chain halted as #<Proc:0x007fa171ca9008@/Users/cjjohnson/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for ::1 at 2015-06-26 20:23:07 -0700
+Processing by MessagesController#new as HTML
+Filter chain halted as #<Proc:0x007fa171ca9008@/Users/cjjohnson/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for ::1 at 2015-06-26 20:23:08 -0700
+Processing by MessagesController#new as HTML
+Filter chain halted as #<Proc:0x007fa171ca9008@/Users/cjjohnson/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_controller/metal/http_authentication.rb:71> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/messages" for ::1 at 2015-06-26 20:23:13 -0700
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.2ms)

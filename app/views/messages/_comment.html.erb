@@ -1,0 +1,6 @@
+<% @message.comments.each do |comment| %>
+<p>
+	<strong><%= comment.commenter %></strong> <em>says:<em><br>
+	<%= comment.body %>
+</p>
+<% end %>
