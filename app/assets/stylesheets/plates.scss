@@ -1,3 +1,36 @@
 // Place all the styles related to the plates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.formbox {
+	clear: both;
+	width: 15%;
+	background-color: grey;
+	border-radius: 10%;
+	padding: 2em;
+	margin: 4em 0 0 2em;
+}
+.individualPlate {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 10%;
+	padding: 1em;
+}
+.plateDisplay {
+	width: 60%;
+	background-color: grey;
+	border-radius: 5%;
+	padding: 2em;
+	margin-left: 20%;
+}
+.plateDisplay table {
+	background-color: white;
+	border: 1px solid black;
+	margin: auto;
+	border-collapse: collapse;
+}
+.plateDisplay table td {
+	border: 1px solid black;
+	padding: .5em;
+}
