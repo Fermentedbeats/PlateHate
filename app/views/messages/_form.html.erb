@@ -14,23 +14,14 @@
 </div>
 <%end%>
 
-  <p>
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </p>
+<table>
+  
+  <td><%= f.label :state %>: <%= f.text_field :state %>  </td>
 
-
-  <p>
-    <%= f.label :plate_no %><br>
-    <%= f.text_field :plate_no %>
-  </p>
+  <td><%= f.label :plate_no %>: <%= f.text_field :plate_no %></td>
  
-  <p>
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </p>
+  <td><%= f.label :message %>: <%= f.text_area :message %></td>
  
-  <p>
-    <%= f.submit %>
-  </p>
+  <td><%= f.submit %></td>
+</table>
 <% end %>

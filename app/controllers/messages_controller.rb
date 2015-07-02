@@ -13,6 +13,9 @@ class MessagesController < ApplicationController
 
 	def new
 		@message = Message.new
+		if @message.save
+		  redirect_to action: index
+		end
 	end
 
 	def edit

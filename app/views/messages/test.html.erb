@@ -1,0 +1,64 @@
+
+INDEX
+
+<div class="nav">
+<%= link_to "Leave some hate", new_message_path %>
+</div>
+
+<h1>Plates - All</h1>
+<div class="plateDisplay">
+<table>
+	<tr>
+		<th>State</th>
+		<th>Plate</th>
+		<th colspan="3">Message</th>
+	</tr>
+		<% @messages.each do |message| %>
+	<tr>
+		<td><%= message.state %></td>
+		<td><%= message.plate_no %></td>
+		<td><%= message.message %></td>
+		<td><%= link_to 'See More', message_path(message) %></td>
+		<td><%= link_to 'Edit', edit_message_path(message) %></td>
+		<td><%= link_to 'Delete', message_path(message),
+				method: :delete,
+				data: { confirm: 'You Sure?' } %></td>
+	</tr>
+		<% end %>
+</table>
+</div>
+
+SHOW
+
+<div class="nav">
+<ul>	
+<li><%= link_to "Home", messages_path %></li>
+</ul>
+</div>
+
+
+<div class="formbox">
+
+<div class="individualPlate">
+<p>
+	<strong>Plate:</strong>
+	<%= @message.state%>: <%= @message.plate_no %>
+</p>
+
+<p>
+	<strong>Hate:</strong>
+	<%= @message.message %>
+</p>
+<%= link_to 'Edit', edit_message_path %>
+
+</div><!--individualPlate-->
+<h3>Comments: </h3>
+<div class="individualPlate"><%= render 'comments/comment' %></div>
+
+
+
+<h2>Add a Comment</h2>
+<%= render 'comments/form' %>
+
+
+</div><!--formbox-->

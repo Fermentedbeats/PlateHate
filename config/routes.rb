@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
+   root :controller => 'static', :action => '/' 
   get 'welcome/index'
 
   resources :messages
-  root 'welcome#index'
+  # root 'welcome#index'
   
   resources :messages do
     resources :comments

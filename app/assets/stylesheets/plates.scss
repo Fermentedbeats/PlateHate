@@ -2,6 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	background-image: url('backdrop2.jpg');
+	background-size: 100%;
+}
+h1 {
+	color: white;
+	text-align: center;
+	font-size: 3em;
+}
+h1, h2, h3, p, td {
+	font-family: georgia;
+}
+
+.nav {
+	list-style-type: none;
+	text-transform: uppercase;
+	font-family: georgia;
+	position: fixed;
+}
+.nav a {
+	text-decoration: none;
+	color: #C8A2C8;
+}
+.nav li {
+	display: inline-block;
+	float: left;
+	padding: 1em;
+}
+.title {
+	clear: both;
+	display: block;
+}
+#hows img {
+	padding-top: 15%;
+	display: block;
+	margin: auto;
+}
+
+
 
 .formbox {
 	clear: both;
@@ -24,7 +63,7 @@
 	padding: 2em;
 	margin-left: 20%;
 }
-.plateDisplay table {
+/*.plateDisplay table {
 	background-color: white;
 	border: 1px solid black;
 	margin: auto;
@@ -33,4 +72,43 @@
 .plateDisplay table td {
 	border: 1px solid black;
 	padding: .5em;
+}*/
+.comingSoon p {
+	font-family: georgia;
+	color: yellow;
+	font-size: 3em;
+	display: block;
+	text-align: center;
+}
+.messageFormDiv  {
+	width: 100%;
+	display: inline-block;
+	margin-top: 2em;
+
+}
+.messageFormDiv table {
+	background-color: white;
+	opacity: .8;
+	text-align: top;
+	padding: .5em;
+	width: 15%;
+	float: right;
+	position: fixed;
+	border-radius: 10%
+}
+.messages  {
+	background-color: white;
+	border: 1px solid black;
+	margin: auto;
+	border-collapse: collapse;	
+	width: 85%;
+}
+.comments {
+	background-color: white;
+	opacity: .8;
+	border: 1px solid black;
+	margin: auto;
+	border-collapse: collapse;	
+	width: 70%;
+	margin-bottom: 1em;
 }

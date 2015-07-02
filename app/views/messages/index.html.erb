@@ -1,6 +1,57 @@
 <div class="nav">
-<%= link_to "Leave some hate", new_message_path %>
+	<%= link_to "ACCOUNT", new_message_path %>
 </div>
+<div class="messageFormDiv">
+	<table>
+		<%= form_for Message.new do |f| %>
+		<tr><td><%= f.label :state %>: <%= f.text_field :state %>  </td></tr>
+		<tr><td><%= f.label :plate_no %>: <%= f.text_field :plate_no %></td></tr>
+		<tr><td><%= f.label :message %>: <%= f.text_area :message %></td></tr>
+		<tr><td><%= f.submit %></td></tr>
+		<%end%>
+	</table>
+
+</div>
+
+<h1>PlateHate</h1>
+<div class="plateDisplay">
+
+
+	<% @messages.each do |message| %>
+	<table class="messages">
+		<tr><td><strong><%= message.state %>: <%= message.plate_no %></strong>&nbspc;<%= message.message %></td>	</tr>
+		<table class="comments">
+			<% message.comments.each do |comment| %>
+			<tr><td><strong><%= comment.commenter %></strong> <em>says:</em><%= comment.body %></td></tr>
+			<% end %>
+			<tr class="hideUnhide"><td>Add a Comment</td></tr>
+			<%#= render 'comments/form' %>
+			<tr><td><%= form_for([message, message.comments.build]) do |f| %></td></tr>
+			<tr class="hide"><td><%= f.label :Handle %>: <%= f.text_field :commenter %></td></tr>
+			<tr class="hide"><td><%= f.label :Thoughts %>: <%= f.text_field :body %></td></tr>
+			<tr class="hide"><td><%= f.submit %></td></tr>
+			<% end %>
+
+		</table>
+
+		<% end %>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<!-- 
 
 <h1>Plates - All</h1>
 <div class="plateDisplay">
@@ -23,4 +74,4 @@
 	</tr>
 		<% end %>
 </table>
-</div>
+</div> -->
