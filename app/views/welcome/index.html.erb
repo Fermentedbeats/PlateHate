@@ -2,11 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../../public/stylesheets/main.css">
   <title>PlateHate</title>
 </head>
 <body>
 
-<div class="yo">Rupert Kills Us All - The End</div>
-<%= link_to 'The Hate', controller: 'messages' %>
+<div class="nav">
+	<ul>
+		<li><%= link_to 'All Hate', controller: 'messages' %> | </li>
+		<li><%= link_to 'Hate By State', controller: 'messages' %> | </li>
+		<li><%= link_to 'Leave Some Hate', new_message_path %></li>
+	</ul>
+	
+</div>
+
+
+<div class="title"><h1>PlateHate</h1></div>
+
+
 </body>
 </html>
+
+

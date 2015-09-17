@@ -1,3 +1,13 @@
+<div class="nav">
+<ul>	
+<li><%= link_to "Home", messages_path %></li>
+</ul>
+</div>
+
+
+<div class="formbox">
+
+<div class="individualPlate">
 <p>
 	<strong>Plate:</strong>
 	<%= @message.state%>: <%= @message.plate_no %>
@@ -7,15 +17,16 @@
 	<strong>Hate:</strong>
 	<%= @message.message %>
 </p>
-<h2>Comments: </h2>
+<%= link_to 'Edit', edit_message_path %>
 
-<%= render 'comments/comment' %>
+</div><!--individualPlate-->
+<h3>Comments: </h3>
+<div class="individualPlate"><%= render 'comments/comment' %></div>
 
 
 
 <h2>Add a Comment</h2>
 <%= render 'comments/form' %>
 
-<%= link_to 'Edit', edit_message_path %> |
 
-<%= link_to "Home", messages_path %>
+</div><!--formbox-->
